@@ -119,12 +119,21 @@ main {
 }
 
 section {
-    width: 50%;
+    height: 100%;
+    width: 48%;
     border-radius: 10px;
 }
 
 form {
+    height: 100%;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    label{
+        padding-bottom: 10px;
+    }
 }
 
 .left {
@@ -139,6 +148,7 @@ form {
 }
 
 input {
+    font-size: 20px;
     background: var(--very-light-grayish-cyan);
     border: unset;
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
@@ -154,7 +164,7 @@ input {
     flex-wrap: wrap;
     row-gap: 15px;
 
-    input {
+    .tip-variate {
         width: 27%;
         background: var(--very-dark-cyan);
         color: white;
@@ -163,7 +173,28 @@ input {
         cursor: pointer;
     }
 
-    input:last-child{
+    input.btn-tip::placeholder{
+        color: white;
+    }
+    input.btn-tip:hover::placeholder{
+        color: var(--very-dark-cyan);
+    }
+
+    .btn-tip:hover{
+        background: var(--strong-cyan);
+
+        color: black;
+    }
+
+    input.btn-tip:focus-visible{
+        outline: none;
+    }
+
+    input.btn-tip::placeholder:hover{
+        color: black;
+    }
+
+    input:last-child {
         background: var(--very-light-grayish-cyan);
         color: var(--dark-grayish-cyan) !important;
 
@@ -173,14 +204,68 @@ input {
     }
 }
 
-::placeholder {
-    color: white;
+input:focus-visible{
+    outline: 2px solid var(--strong-cyan);
 }
 
-input:focus-visible {
-    outline: 1px solid black;
+input#custom::placeholder{
+    color: var(--dark-grayish-cyan);
+    text-align: center;
+    font-weight: 600;
+}
+
+input#custom{
+    padding: 2px;
+    text-align: right;
 }
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
+.right {
+    background: var(--very-dark-cyan);
+    padding: 30px;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 40px;
+        p{
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 1px;
+
+            span{
+                color: white;
+            }
+        }
+    }
+
+    button {
+        border: unset;
+        cursor: pointer;
+        width: 100%;
+        background: var(--dark-grayish-cyan);
+        padding: 5px;
+        color: var(--grayish-cyan);
+        margin-top: 100px;
+    }
+}
+
+
+
+.persons-price{
+    color: var(--strong-cyan);
+    font-size: 34px !important;
+}
+
+.persons-price::before{
+    content: "$";
+    font-size: 34px;
+}
+
+input::after{
+    content: url("images/icon-dollar.svg");
+}
+

@@ -22,37 +22,39 @@
             <div class="left calc">
                 <div class="input-wrap">
                     <label for="bill">Bill</label>
-                    <input type="number" id="bill">
+                    <input type="number" id="bill" data-value="" placeholder="0">
                 </div>
-                <div class="select input-wrap">
-                    <label for="tip">Select Tip % </label>
-                    <div class="btns">
-                        <input class="tip-variate" type="number" value="5%" placeholder="5%" readonly/>
-                        <input class="tip-variate" type="number" value="10%" placeholder="10%" readonly/>
-                        <input class="tip-variate" type="number" value="15%" placeholder="15%" readonly/>
-                        <input class="tip-variate" type="number" value="25%" placeholder="25%" readonly/>
-                        <input class="tip-variate" type="number" value="50%" placeholder="50%" readonly/>
-                        <input class="tip-variate" type="number" placeholder="Custom" />
-                    </div>
+            </div>
+            <div class="select input-wrap">
+                <label for="tip">Select Tip % </label>
+                <div class="btns">
+                    <input class="tip-variate btn-tip" type="number" data-value="5" placeholder="5%" readonly/>
+                    <input class="tip-variate btn-tip" type="number" data-value="10" placeholder="10%" readonly/>
+                    <input class="tip-variate btn-tip" type="number" data-value="15" placeholder="15%" readonly/>
+                    <input class="tip-variate btn-tip" type="number" data-value="25" placeholder="25%" readonly/>
+                    <input class="tip-variate btn-tip" type="number" data-value="50" placeholder="50%" readonly/>
+                    <input class="tip-variate " type="number" data-value="" id="custom" placeholder="Custom" />
                 </div>
             </div>
             <div class="input-wrap">
                 <label for="person">Number of people</label>
-                <input type="number" id="person" value="0">
+                <input type="number" id="person" data-value="" placeholder="0">
             </div>
         </form>
     </section>
-    <section>
-        <div><p>Tip Amount <br>
+    <section class="right">
+        <div><p><span>Tip Amount</span> <br>
             / person</p>
-            <p id="tip-amount"><img src="images/icon-dollar.svg" alt="dollar"></p>
+            <p id="tip-amount" class="persons-price">0.00</p>
         </div>
-        <div><p>Total <br>
+        <div><p><span>Total</span> <br>
             / person</p>
-            <p id="total"><img src="images/icon-dollar.svg" alt="dollar"></p>
+            <p id="total" class="persons-price">0.00</p>
         </div>
         <button>Reset</button>
     </section>
 </main>
+
+<script src="main.js"></script>
 </body>
 </html>
