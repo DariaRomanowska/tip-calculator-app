@@ -22,7 +22,6 @@
 */
 html,
 body {
-    height: 100%;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -100,12 +99,20 @@ p {
 }
 
 body {
+    height: 100vh;
     background: var(--light-grayish-cyan);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    row-gap: 70px;
+}
+
+.wrapp {
+
+}
+
+header {
+    padding: 50px 0;
 }
 
 main {
@@ -116,6 +123,7 @@ main {
     align-items: center;
     justify-content: space-between;
     max-width: 900px;
+
 }
 
 section {
@@ -131,7 +139,7 @@ form {
     flex-direction: column;
     justify-content: space-between;
 
-    label{
+    label {
         padding-bottom: 10px;
     }
 }
@@ -156,6 +164,7 @@ input {
     text-align: right;
     padding: 5px 20px;
     color: var(--grayish-cyan);
+    cursor: pointer;
 }
 
 .btns {
@@ -167,30 +176,38 @@ input {
     .tip-variate {
         width: 27%;
         background: var(--very-dark-cyan);
-        color: white;
         text-align: center;
         border-radius: 4px;
         cursor: pointer;
     }
 
-    input.btn-tip::placeholder{
+    input.active-btn {
+        background: var(--strong-cyan);
+    }
+
+    input.btn-tip::placeholder {
         color: white;
     }
-    input.btn-tip:hover::placeholder{
+
+    input.btn-tip:hover::placeholder {
         color: var(--very-dark-cyan);
     }
 
-    .btn-tip:hover{
+    input.active-btn::placeholder {
+        color: var(--very-dark-cyan);
+    }
+
+    .btn-tip:hover {
         background: var(--strong-cyan);
 
         color: black;
     }
 
-    input.btn-tip:focus-visible{
+    input.btn-tip:focus-visible {
         outline: none;
     }
 
-    input.btn-tip::placeholder:hover{
+    input.btn-tip::placeholder:hover {
         color: black;
     }
 
@@ -204,17 +221,17 @@ input {
     }
 }
 
-input:focus-visible{
+input:focus-visible {
     outline: 2px solid var(--strong-cyan);
 }
 
-input#custom::placeholder{
+input#custom::placeholder {
     color: var(--dark-grayish-cyan);
     text-align: center;
     font-weight: 600;
 }
 
-input#custom{
+input#custom {
     padding: 2px;
     text-align: right;
 }
@@ -231,12 +248,13 @@ input[type=number]::-webkit-inner-spin-button {
         display: flex;
         justify-content: space-between;
         padding-bottom: 40px;
-        p{
+
+        p {
             font-size: 16px;
             line-height: 26px;
             letter-spacing: 1px;
 
-            span{
+            span {
                 color: white;
             }
         }
@@ -250,22 +268,68 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 5px;
         color: var(--grayish-cyan);
         margin-top: 100px;
+        text-transform: uppercase;
+        border-radius: 3px;
+    }
+    button.active-reset {
+        background: var(--strong-cyan);
+        color: var(--very-dark-cyan);
     }
 }
 
 
-
-.persons-price{
+.persons-price {
     color: var(--strong-cyan);
     font-size: 34px !important;
 }
 
-.persons-price::before{
+.persons-price::before {
     content: "$";
     font-size: 34px;
 }
 
-input::after{
-    content: url("images/icon-dollar.svg");
+.input-wrap {
+    position: relative;
 }
+
+.input-before {
+    position: absolute;
+    top: 60%;
+    left: 4%;
+}
+
+@media only screen and (max-width: 750px) {
+    body {
+        height: auto;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .btns {
+        .tip-variate {
+            width: 31%;
+        }
+    }
+
+    .right {
+        margin-top: 30px;
+        button {
+            margin-top: 0;
+        }
+    }
+
+    form{
+        row-gap: 30px;
+    }
+
+}
+
+
+
 

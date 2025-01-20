@@ -13,6 +13,7 @@
 
 </head>
 <body>
+
 <header>
     <img src="images/logo.svg" alt="">
 </header>
@@ -23,6 +24,7 @@
                 <div class="input-wrap">
                     <label for="bill">Bill</label>
                     <input type="number" id="bill" data-value="" placeholder="0">
+                    <img src="images/icon-dollar.svg" alt="dollar" class="input-before">
                 </div>
             </div>
             <div class="select input-wrap">
@@ -39,6 +41,7 @@
             <div class="input-wrap">
                 <label for="person">Number of people</label>
                 <input type="number" id="person" data-value="" placeholder="0">
+                <img src="images/icon-person.svg" alt="person" class="input-before">
             </div>
         </form>
     </section>
@@ -51,7 +54,7 @@
             / person</p>
             <p id="total" class="persons-price">0.00</p>
         </div>
-        <button>Reset</button>
+        <button id="reset" class="btn">Reset</button>
     </section>
 </main>
 
